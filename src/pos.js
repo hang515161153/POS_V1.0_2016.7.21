@@ -1,8 +1,7 @@
 'use strict';
 
 
-    let shopItems = loadAllItems();
-    let discountBarcodes = loadPromotions();
+    
     /*对条形码进行拆分*/
     function getBarcode(cartTags){
         return cartTags.map(function(tag){
@@ -112,6 +111,8 @@
     /*进行输出*/
 
     function printReceipt(){
+        let shopItems = loadAllItems();
+        let discountBarcodes = loadPromotions();
         let barcodes = getBarcode(cartTags);
         let mergeBarcodes =  mergeBarcode(barcodes);
         let cartItems = getCartItems(mergeBarcodes);
